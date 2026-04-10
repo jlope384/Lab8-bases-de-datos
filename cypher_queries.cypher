@@ -1,22 +1,7 @@
-// ================================================================
-//  LAB 08 — The Nodes World Cup Part I
-//  CC3089 Base de Datos 2 — UVG Semestre I 2026
-//
-//  Archivo: cypher_queries.cypher
-//  Instrucciones: copia y pega cada bloque en el Neo4j Browser
-//  o en la pestaña Query de AuraDB Console.
-// ================================================================
-
 
 // ────────────────────────────────────────────────────────────────
-//  INCISO 1 — Crear el grafo básico mediante "funciones" Cypher
-//  (en Cypher se usan parámetros $param para simular funciones)
+//  INCISO 1 
 // ────────────────────────────────────────────────────────────────
-
-// 1A) Crear un usuario  →  reemplaza los valores en $params
-//     Para ejecutar con parámetros en AuraDB Browser, pega primero
-//     :param userId => 'U001', name => 'Ana García'
-//     y luego ejecuta la query.
 
 // Crear USER
 MERGE (u:USER {userId: $userId})
@@ -40,7 +25,7 @@ RETURN u, r, m;
 
 
 // ────────────────────────────────────────────────────────────────
-//  INCISO 2 — Popular: 5 usuarios con al menos 2 ratings cada uno
+//  INCISO 2 
 // ────────────────────────────────────────────────────────────────
 
 // Usuarios
@@ -78,7 +63,7 @@ MATCH (u:USER{userId:'U005'}),(m:MOVIE{movieId:6}) MERGE (u)-[:RATED {rating:5,t
 
 
 // ────────────────────────────────────────────────────────────────
-//  INCISO 3 — Funciones de búsqueda
+//  INCISO 3 
 // ────────────────────────────────────────────────────────────────
 
 // 3A) Encontrar un usuario por userId
@@ -99,8 +84,7 @@ ORDER BY r.rating DESC;
 
 
 // ────────────────────────────────────────────────────────────────
-//  INCISO 4 — Grafo extendido
-//  Person:Actor / Person:Director / Movie / Genre / User
+//  INCISO 4 
 // ────────────────────────────────────────────────────────────────
 
 // ── Géneros ──
